@@ -4,7 +4,9 @@ const state = {
       enemy: document.querySelector(".enemy"),
       timeLeft: document.querySelector("#time-left"),
       score: document.querySelector("#score"),
-      lives: document.querySelector("#lives")
+      lives: document.querySelector("#lives"),
+      github: document.querySelector(".github-icon"),
+      linkedin: document.querySelector(".linkedin-logo")
     },
     values: {
       gameVelocity: 500,
@@ -19,6 +21,18 @@ const state = {
     },
   };
   
+  function goToLinkedin(){
+    state.view.linkedin.addEventListener('click', function(){
+      window.open('https://www.linkedin.com/in/eduarda-farias-2938b2235/', '_blank');
+    });
+  }  
+
+  function goToGithub(){
+    state.view.github.addEventListener('click', function(){
+      window.open('https://github.com/EduardaFarias', '_blank');
+    });
+  }
+
   function countDown() {
     state.values.curretTime--;
     state.view.timeLeft.textContent = state.values.curretTime;
@@ -69,6 +83,8 @@ const state = {
   
   function initialize() {
     addListenerHitBox();
+    goToGithub();
+    goToLinkedin();
   }
   
   initialize();

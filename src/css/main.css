@@ -44,3 +44,38 @@
 .menu-score h2:nth-child(2){
     margin-top: 10px;
 }
+
+.rodape{
+    height: 150px;
+    background-color: #000000;
+    border-top: 5px solid rgb(216, 189, 36);
+    display: flex;
+    align-items: center;
+
+}
+
+.rodape .banner{
+    text-align: center;
+    display: flex;
+    height: 120px;
+}
+
+.github-icon{
+    height: 50px;
+    display: flex;
+    margin-left: 1100px;
+}
+
+.linkedin-logo{
+    height: 39px;
+    display: flex;
+}
+
+.dev{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 99px;
+    margin-left: -125px;
+    font-size: 11px;
+}
