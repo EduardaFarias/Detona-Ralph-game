@@ -4,15 +4,17 @@ const state = {
       enemy: document.querySelector(".enemy"),
       timeLeft: document.querySelector("#time-left"),
       score: document.querySelector("#score"),
+      lives: document.querySelector("#lives")
     },
     values: {
-      gameVelocity: 1000,
+      gameVelocity: 500,
       hitPosition: 0,
       result: 0,
       curretTime: 60,
+      initialLives: 3
     },
     actions: {
-      timerId: setInterval(randomSquare, 1000),
+      timerId: setInterval(randomSquare,500),
       countDownTimerId: setInterval(countDown, 1000),
     },
   };
@@ -53,6 +55,13 @@ const state = {
           state.view.score.textContent = state.values.result;
           state.values.hitPosition = null;
           playSound("hit");
+        }else{
+            state.values.initialLives--;
+            state.view.lives.textContent = state.values.initialLives;
+            if(state.values.initialLives === 0){
+              alert("Você perdeu!");
+              window.location.reload();
+            }
         }
       });
     });
